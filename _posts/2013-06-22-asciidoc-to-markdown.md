@@ -11,7 +11,9 @@ I have some free time and so I am trying to contribuite to the clojure-cookbook 
 (It's really interesting, you should check it out)
 
 I wrote a couple of very stupid recipes and now I am waiting for the proff reading and correction, if you wanna help:
+
 [Deploy on lein](https://github.com/siscia/clojure-cookbook/blob/lein/deployment/deploy-on-lein/deploy-on-lein.asciidoc)
+
 [Database up and running](https://github.com/siscia/clojure-cookbook/blob/database-up-n-running/databases/database-up-n-running/database-up-n-running.asciidoc)
 
 
@@ -35,17 +37,17 @@ One thing may, however, be interesting: how I manage to "translate" the titles.
 
 In asciidoc titles have this syntax:
 
-```asciidoc
-= H1 TITLE
+{% highlight text %}
+= H1 TITLE 
 == H2 TITLE
 ==== H4 TITLE
-```
+{% endhighlight %}
 
 In markdown it is very similar, but instead of `=` you can use `#`.
 
 So I just needed a regex to change that `=` in `#`, well I am not a regex espert and I haven't find out any smart way to do it but the one that you can see, I also store the regex in a map to link them each other.
 
-```clojure
+{% highlight clojure %}
 (def titles-regex
   (sorted-map-by #(> (count %1) (count %2))
                  "###### $1" #"====== +([^ \t\n\r\f\v].*?)"
@@ -54,7 +56,7 @@ So I just needed a regex to change that `=` in `#`, well I am not a regex espert
                  "### $1" #"=== +([^ \t\n\r\f\v].*?)"
                  "## $1" #"== +([^ \t\n\r\f\v].*?)"
                  "# $1" #"= +([^ \t\n\r\f\v].*?)"))
-```
+{% endhighlight %}
 
 The problem is that if you start to parse the file with the wrong order you will just sobstitute the last `=` of any asciidoc title with a `#` that will generate a bunch of wrong H1.
 
@@ -64,7 +66,7 @@ And here it comes the sorted map that helped to sort the regex from the longer t
 
 The whole code here:
 
-```clojure
+{% highlight clojure %}
 (ns asciidoc-to-markdown.core)
 
 (def titles-regex
@@ -98,12 +100,12 @@ The whole code here:
                    source
                    title
                    inline-code)))
-```
+{% endhighlight %}
 
 If you are interested you can just download everything from github and run it to convert basic asciidoc into markdown.
 
-```bash
-git clone git@github.com:siscia/asciidoc-to-markdown.git
-cd asciidoc-to-markdown
-lein run input-file.asciidoc output-file.md
-```
+{% highlight text %}
+    git clone git@github.com:siscia/asciidoc-to-markdown.git
+    cd asciidoc-to-markdown
+    lein run input-file.asciidoc output-file.md
+{% endhighlight %}
