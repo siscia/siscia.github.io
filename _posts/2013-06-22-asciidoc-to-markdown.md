@@ -8,10 +8,10 @@ excerpt: "Little tool to convert asciidoc documents from the clojure-cookbook pr
 ---
 {% include JB/setup %}
 
-I have some free time and so I am trying to contribuite to the clojure-cookbook project.
+I have some free time and so I am trying to contribute to the clojure-cookbook project.
 (It's really interesting, you should check it out)
 
-I wrote a couple of very stupid recipes and now I am waiting for the proff reading and correction, if you wanna help:
+I wrote a couple of very stupid recipes and now I am waiting for the proof reading and correction, if you wanna help:
 
 [Deploy on lein](https://github.com/siscia/clojure-cookbook/blob/lein/deployment/deploy-on-lein/deploy-on-lein.asciidoc)
 
@@ -19,9 +19,9 @@ I wrote a couple of very stupid recipes and now I am waiting for the proff readi
 
 
 Meanwhile, I thought that you might be interested to those recipe.
-They are very entry-level recepists so they may help just somebody who is very new to clojure, however if you know clojure just a little bit you migth find those interesting and you may help me to review either my English or my clojure.
+They are very entry-level recipes so they may help just somebody who is very new to clojure, however if you know clojure just a little bit you might find those interesting and you may help me to review either my English or my clojure.
 
-But there is a problem: the clojure-cookbook project use the .asciidoc (it is kinda like markdown but it looks more powerfull, and it is a better fit to write real-paper book) while my blog run with jekyll that use the markdown format.
+But there is a problem: the clojure-cookbook project use the .asciidoc (it is kinda like markdown but it looks more powerful, and it is a better fit to write real-paper book) while my blog run with jekyll that use the markdown format.
 Jekyll is thinking about allow other file format, but it is not ready yet.
 
 So I tried to figure out a solution by myself and I write a couple of lines of code.
@@ -46,7 +46,7 @@ In asciidoc titles have this syntax:
 
 In markdown it is very similar, but instead of `=` you can use `#`.
 
-So I just needed a regex to change that `=` in `#`, well I am not a regex espert and I haven't find out any smart way to do it but the one that you can see, I also store the regex in a map to link them each other.
+So I just needed a regex to change that `=` in `#`, well I am not a regex expert and I haven't find out any smart way to do it but the one that you can see, I also store the regex in a map to link them each other.
  
 {% highlight clojure %}
 (def titles-regex
@@ -59,7 +59,7 @@ So I just needed a regex to change that `=` in `#`, well I am not a regex espert
                  "# $1" #"= +([^ \t\n\r\f\v].*?)"))
 {% endhighlight %}
 
-The problem is that if you start to parse the file with the wrong order you will just sobstitute the last `=` of any asciidoc title with a `#` that will generate a bunch of wrong H1.
+The problem is that if you start to parse the file with the wrong order you will just substitute the last `=` of any asciidoc title with a `#` that will generate a bunch of wrong H1.
 
 You definitely need to start looking for H6 and the for H5 and so on.
 
