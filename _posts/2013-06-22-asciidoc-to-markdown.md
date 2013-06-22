@@ -4,6 +4,7 @@ title: "Asciidoc to Markdown"
 description: "Translate asciidoc to markdown"
 category: programming
 tags: [clojure, programming, markdown, asciidoc, conversion]
+excerpt: "Little tool to convert asciidoc documents from the clojure-cookbook project to markdown files to use in jekyll"
 ---
 {% include JB/setup %}
 
@@ -87,3 +88,5 @@ If you are interested you can just download everything from github and run it to
     cd asciidoc-to-markdown
     lein run input-file.asciidoc output-file.md
 {% endhighlight %}
+
+{% include JB/setup %}

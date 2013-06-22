@@ -4,7 +4,6 @@ category : lessons
 tagline: "Supporting tagline"
 tags : [intro, beginner, jekyll, tutorial]
 ---
-{% include JB/setup %}
 
 This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
 Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
@@ -410,3 +409,5 @@ Jekyll-bootstrap is intended to provide helper methods and strategies aimed at m
 
 Please take a look at [{{ site.categories.api.first.title }}]({{ BASE_PATH }}{{ site.categories.api.first.url }}) 
 or jump right into [Usage]({{ BASE_PATH }}{{ site.categories.usage.first.url }}) if you'd like.
+
+{% include JB/setup %}
