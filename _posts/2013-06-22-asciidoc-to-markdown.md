@@ -46,7 +46,7 @@ In asciidoc titles have this syntax:
 In markdown it is very similar, but instead of `=` you can use `#`.
 
 So I just needed a regex to change that `=` in `#`, well I am not a regex espert and I haven't find out any smart way to do it but the one that you can see, I also store the regex in a map to link them each other.
-
+ 
 {% highlight clojure %}
 (def titles-regex
   (sorted-map-by #(> (count %1) (count %2))
@@ -64,43 +64,21 @@ You definitely need to start looking for H6 and the for H5 and so on.
 
 And here it comes the sorted map that helped to sort the regex from the longer to the shorter and to still have them linked each other.
 
-The whole code here:
+Finally, just one last little note, on github it is possible to define block of code using a syntax like:
 
-{% highlight clojure %}
-(ns asciidoc-to-markdown.core)
-
-(def titles-regex
-  (sorted-map-by #(> (count %1) (count %2))
-                 "###### $1" #"====== +([^ \t\n\r\f\v].*?)"
-                 "##### $1" #"===== +([^ \t\n\r\f\v].*?)"
-                 "#### $1" #"==== +([^ \t\n\r\f\v].*?)"
-                 "### $1" #"=== +([^ \t\n\r\f\v].*?)"
-                 "## $1" #"== +([^ \t\n\r\f\v].*?)"
-                 "# $1" #"= +([^ \t\n\r\f\v].*?)"))
-
-(defn title [text]
-  (reduce (fn [text regex]
-            (clojure.string/replace text (get titles-regex regex) regex))
-          text
-          (keys titles-regex)))
-
-(defn source [text]
-  (clojure.string/replace text
-                          #"\[source,(.*?)\]\n----\n(.*?\n+.*?)\n----"
-                          "```$1\n$2```\n"))
-
-(defn inline-code [text]
-  (clojure.string/replace text
-                          #"\+(.*?)\+"
-                          "`$1`"))
-
-(defn -main [& [input output]]
-  (spit output (-> input
-                   slurp
-                   source
-                   title
-                   inline-code)))
+{% highlight text %}
+``` language 
+fancy code
+```
 {% endhighlight %}
+
+This is not true here on jekyll (they are working on it, though) where you have to use a syntax like django.
+
+My little script is been thought to let me publish here on jekyll, so it generate a slightly wrong syntax; you can fix that by passing the `--no-jekyll` parameter.
+
+The whole code:
+
+{% gist 5841486 %}
 
 If you are interested you can just download everything from github and run it to convert basic asciidoc into markdown.
 
