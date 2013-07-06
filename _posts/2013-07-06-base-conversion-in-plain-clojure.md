@@ -2,7 +2,7 @@
 layout: post
 title: "Base conversion in plain clojure"
 description: ""
-category: 
+category: programming
 tags: [clojure, base conversion, number, change of base, change, base, int, integer]
 ---
 {% include JB/setup %}
