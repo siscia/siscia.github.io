@@ -47,5 +47,16 @@ My simple solutions is here:
 
 [Base conversion in Clojure](https://gist.github.com/siscia/5939462)
 
-Comment with your.
+Please feel free to comment with your own solution.
 
+Now another question raise:
+
+how to convert a number from base n to base m, without pass to base 10 ?
+
+I wasn't able to answer, even using google, if you have a solution feel free to share.
+
+------------------
+
+I have bothered you with this little challenge just because I have too much free time, if you need some clojure/python freelancer *I am for hire*, feel free to drop me an [email](mailto:{{ site.author.email }}) or tweet me @siscia_.
+
+------------------
