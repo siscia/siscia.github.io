@@ -4,6 +4,7 @@ title: "Base conversion in plain clojure"
 description: ""
 category: programming
 tags: [clojure, base conversion, number, change of base, change, base, int, integer]
+excerpt: "Conversion of number between different bases using plain clojure."
 ---
 {% include JB/setup %}
 
