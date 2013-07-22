@@ -3,7 +3,7 @@ layout: post
 title: "Algorithm problem for job"
 description: ""
 category: 
-tags: []
+tags: [clojure, algorithm]
 ---
 I was taking a curious look at a list of offer for functional job, and one in particular caught my attention.
 
