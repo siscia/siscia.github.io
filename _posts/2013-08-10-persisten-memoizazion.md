@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Persistent memoizazion"
+title: "Non-volatile memoizazion"
 description: ""
 category: programming
-tags: [clojure, memoizazion, persistent]
-excerpt: "an idea for a persistent memoizazion"
+tags: [clojure, memoizazion, non-volatile]
+excerpt: "an idea for a non-volatile memoizazion"
 ---
 
 Clojure provide a very handy function `memoize`, such function is so stupid and so powerful at the same time that is almost amazing.
@@ -13,9 +13,9 @@ Memoizazion is a technique that let to memorize the input and the output of a pa
 
 Obviously it is not black-magic, and the function has to be a pure one, otherwise it won't works properly.
 
-The little down-side of `memoize` is that it is not persistent, if you memoize a function and then you restart your machine all the values of the first memoizazion are now gone.
+The little down-side of `memoize` is that it is volatile, if you memoize a function and then you restart your machine all the values of the first memoizazion are now gone.
 
-The only way to get a persistent memoizazion is to write the result down somewhere that is not volatile, in this way even shutting down the machine the values are still there.
+The only way to get a non-volatile memoizazion is to write the result down somewhere that is not volatile, in this way even shutting down the machine the values are still there.
 
 Obviously there are several trades off to do, write and read from the disk is way slower than from the RAM, and somehow more difficult; however it may worth if the function to memoize is a function ***very*** slow.
 
