@@ -1,0 +1,73 @@
+
+body {
+    font-family: 'Oxygen Mono', sans-serif;
+    -webkit-print-color-adjust: exact;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    font-size: medium;
+    margin: 0;
+    height: 100%;
+}
+    
+.code-session {
+    background: black;
+    color: green;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+}
+
+m {
+    font-weight: bold;
+}
+
+.output {
+    line-height: 1;
+    margin: 0 0 0 2.5em;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.command {
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.result {
+    display: none;
+}
+
+input[type="text"], textarea {
+    background: black;
+    display: inline-block;
+    color: green;
+    font-family: 'Oxygen Mono', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+label {
+    display: inline-block;
+}
+
+textarea.focus, input:focus {
+		    outline: 0;
+}
+
+*:focus {
+    outline: 0;
+}
+
+.overlay{
+    opacity:1;
+    background: black;
+    background-color:black;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:-1000;
+}

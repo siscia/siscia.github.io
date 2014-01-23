@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="curriculum.css">
+
+  </head>
+  
+  <body>
+    <div class="overlay">
+    </div>
+    
+    {{#method-call}}
+      <div class="result methods" id="{{method-name}}()">
+        {{#results}}
+          <p> {{.}} </p>
+        {{/results}}
+      </div>
+    {{/method-call}}
+      
+    <div class="code-session">
+      <p> This is the curriculum of Simone Mosciatti, it is a simulation of a Python live session, the method allow are listen below. </p>
+      <p> All this is "hand made"", no fancy library but only old plain JavaScript and html </p>
+      <p> The python class "MySelf" is a real Python class: you can check that out at <a href=https://gist.github.com/siscia/8512255>this gist.</a></p>
+      <p> The class is somehow interesting, it use a little bit of meta-programming to decide what methods you should be able to call in this session, it also order such methods, feature not necessary anymore.</p>
+      <p>>>> siscia = MySelf("Simone Mosciatti", "siscia") </p>
+      <p>>>> dir(siscia) </p>
+      <p id="methods-list"> </p>
+      <div id="out"></div>
+      <div>
+	<label for="in">>>>  siscia.</label><input type="text" id="in" autofocus="autofocus" onkeypress="onInput(event)">
+      </div>
+    </div>
+
+
+
+    <script src="console.js"></script>
+  </body>
+</html>
+
