@@ -83,6 +83,10 @@ function onInput(e) {
     if (output.result != undefined){
       addOutput(output.result);
     }
+    else if (analyze(inputBox.value + "()").result != undefined){
+      output = analyze(inputBox.value + "()");
+      addOutput(output.result);
+    }
     else {
       commandError(output);
     }
