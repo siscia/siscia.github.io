@@ -4,7 +4,7 @@ import pystache
 
 
 def lazy():
-    return run("curriculum.mustache", "cv.html")
+    return run("curriculum.mustache", "index.html")
 
 def run(inp, outp):
     me = MySelf("Simone Mosciatti", "siscia")
