@@ -3,9 +3,8 @@ layout: post
 title: "Updating Lobos"
 description: ""
 category: 
-tags: []
+tags: [clojure, lobos, open source]
 ---
-{% include JB/setup %}
 
 I needed to work with Lobos and Korma together.
 
@@ -18,3 +17,5 @@ Anyway here is the github repo:
 https://github.com/siscia/lobos
 
 So everybody can use Lobos together with Korma.
+
+{% include JB/setup %}
