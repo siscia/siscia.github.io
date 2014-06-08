@@ -18,4 +18,6 @@ Anyway here is the github repo:
 
 So everybody can use Lobos together with Korma.
 
+Edit, the path is now being merged in Lobos.
+
 {% include JB/setup %}
