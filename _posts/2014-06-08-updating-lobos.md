@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Updating Lobos"
+description: ""
+category: 
+tags: []
+---
+{% include JB/setup %}
+
+I needed to work with Lobos and Korma together.
+
+Unfortunately the last version of Korma use the jdbc version 3 while Lobos use the jdbc version 2.
+
+The architecture of Lobos is not so obvious, so "porting" (I didn't do much work honestly) it to use jdbc 3 is being a little hummm... "weird".
+
+Anyway here is the github repo:
+
+https://github.com/siscia/lobos
+
+So everybody can use Lobos together with Korma.
