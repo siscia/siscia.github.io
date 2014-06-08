@@ -19,6 +19,7 @@ author :
   image :  https://raw.github.com/siscia/siscia.github.io/master/pic/mweb.sim@gmail.com_94fff3db.jpg
 
 image : pic/mweb.sim@gmail.com_94fff3db.jpg
+markdown: kramdown
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
