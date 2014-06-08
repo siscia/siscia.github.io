@@ -14,7 +14,7 @@ The architecture of Lobos is not so obvious, so "porting" (I didn't do much work
 
 Anyway here is the github repo:
 
-https://github.com/siscia/lobos
+[https://github.com/siscia/lobos](https://github.com/siscia/lobos)
 
 So everybody can use Lobos together with Korma.
 
