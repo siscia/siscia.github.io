@@ -18,7 +18,7 @@ However if you are using MongoDB changes are that you will have some of this obj
 
 After you figure out what is wrong, the most immediate solution is something very simple, you simply figure out that `ObjectId` is the values of MongoDB ids and you just make sure to replace every single `:_id` with a string.
 
-```clojure
+{% highlight clojure %}
 (ns your.namespace
   (:require [cheshire.core :refer [generate-string]]))
 
@@ -26,7 +26,7 @@ After you figure out what is wrong, the most immediate solution is something ver
   (-> m
       (update-in [:_id] str)
       generate-string))
-```
+{% endhighlight %}
 
 If your backend is pretty simple it may just work fine, but most likely the backed will grow, and you will start to make connections between the different objects of your MongoDB database, most likely you will add at the simple `movie` document the list of your users who watched the movie, and now you get more `ObjectId` around.
 
@@ -40,7 +40,7 @@ The simplest solution that I found is to use `clojure.walk/{pre,post}walk`.
 
 The code is pretty much the same as `clojure.walk/stringify-keys`
 
-```clojure
+{% highlight clojure %}
 
 (defn convert-ObjectId-to-string [[k v]]
   (if (= org.bson.types.ObjectId (class v))
@@ -60,7 +60,7 @@ The code is pretty much the same as `clojure.walk/stringify-keys`
       convert-all-ObjectId
       generate-string))
 
-```
+{% endhighlight %}
 
 This approach works everytime, but it may not be so efficient because, before writing the string, you will walk all the map in order to convert every single possible `ObjectId`, even if there are none of them.
 
@@ -70,7 +70,7 @@ The approach is possible in [cheshire](https://github.com/dakrone/cheshire) and 
 
 If you are using cheshire you add an encoder, internally it extends a protocol.
 
-```clojure
+{% highlight clojure %}
 
 (ns your.namespace
   (:require [cheshire.core :refer [generate-string]]
@@ -85,11 +85,11 @@ If you are using cheshire you add an encoder, internally it extends a protocol.
 (generate-string {:_id (ObjectId.)})
 ;; "{\"_id\":\"53ff596144fc363fad297b75\"}"
 
-```
+{% endhighlight %}
 
 If you are using `clojure/data.json` you just need to write a small function and parse it as argument at the generator.
 
-```clojure
+{% highlight clojure %}
 (ns your.namespace
   (:require [clojure.data.json :refer [write-string]]))
 
@@ -101,7 +101,7 @@ If you are using `clojure/data.json` you just need to write a small function and
 (write-string {:_id (ObjectId.)}
               :value-fn write-ObjectId)
 ;; "{\"_id\":\"53ff596144fc363fad297b75\"}"
-```
+{% endhighlight %}
 
 I am actually looking for a job, if you are interested in hire me or just say "hi" please feel free to send me an email.
 
