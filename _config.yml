@@ -31,6 +31,9 @@ markdown: kramdown
 #
 production_url : http://siscia.github.io
 
+footer_message : footer_message.html
+
+
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
