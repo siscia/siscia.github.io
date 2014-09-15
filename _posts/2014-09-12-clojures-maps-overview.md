@@ -50,6 +50,9 @@ user> my-map
 
 One very important thing to notice is that the order of the couple `{:key :value}` is not fixed inside a map: in fact if you think about it, it doesn't make sense for a map to be ordered.
 
+You can find a deeper explaination about how to create maps in the following post:
+    [Create clojure map, advanced method. PART 1]({% post_url 2014-09-15-create-clojure-map-advanced-methods-part-1 %})
+
 ## Read map
 
 Now that we know how to define a basic map, let's see how to read the values inside it.
