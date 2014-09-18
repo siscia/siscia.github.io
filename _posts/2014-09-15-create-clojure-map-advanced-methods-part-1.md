@@ -155,6 +155,10 @@ Of course if you pass `compare` as function in `sorted-map-by` you will end up w
 
 This is all I get for now, next time I will talk about other functions that return maps: `bean`, `frequencies`, `group-by` and `clojure.set/index`
 
+[Next Chapter: bean, frequencies, group-by, clojure.set/index]({% post_url 2014-09-16-create-clojure-map-advanced-methods-part-2 %})
+
+
+
 If you have any questions or suggestions please let me know, I am extremely interested in your opinion.
 
 Also, if you have some topic you wish to explore more deeply feel free to require it in the comments below.

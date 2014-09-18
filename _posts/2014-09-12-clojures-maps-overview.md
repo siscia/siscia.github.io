@@ -51,7 +51,10 @@ user> my-map
 One very important thing to notice is that the order of the couple `{:key :value}` is not fixed inside a map: in fact if you think about it, it doesn't make sense for a map to be ordered.
 
 You can find a deeper explaination about how to create maps in the following post:
-    [Create clojure map, advanced method. PART 1]({% post_url 2014-09-15-create-clojure-map-advanced-methods-part-1 %})
+
+*   [Create Clojure Maps 1/2 : hash-map, array-map, zipmap, sorted-map and sorted-map-by]({% post_url 2014-09-15-create-clojure-map-advanced-methods-part-1 %})
+
+*   [Create Clojure Maps 2/2 : bean, frequencies, group-by, index]({% post_url 2014-09-16-create-clojure-map-advanced-methods-part-2%})
 
 ## Read map
 
