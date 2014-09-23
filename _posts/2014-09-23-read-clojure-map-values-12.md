@@ -3,8 +3,8 @@ layout: post
 title: "Read clojure map values 1/2"
 description: ""
 category: programming
-tags: [clojure, map, read map, read, get, get-in, contains?, find]
 excerpt: "First chapter about how to read values from a clojure map: get, get-in, contains?, find ."
+tags: [clojure, map, read map, read, get, get-in, "contains?", find,]
 ---
 {% include JB/setup %}
 
@@ -16,7 +16,7 @@ For those who missed the previous chapters:
 
 *   [Create Maps Overview of: hash-map, array-map, zipmap, sorted-map and sorted-map-by]({% post_url 2014-09-15-create-clojure-map-advanced-methods-part-1 %})
 
-*   [Create Maps Overview of: bean, frequencies, group-by, clojure.set/index]({% post_url 2014-09-16-create-clojure-map-advanced-methods-part-2%})
+*   [Create Maps Overview of: bean, frequencies, group-by, clojure.set/index]({% post_url 2014-09-16-create-clojure-map-advanced-methods-part-2 %})
 
 In the next 2 chapters we are going to explore more deeply functions such as: `get`, `get-in`, `contains?`, `find`, `keys`, `vals` and `select-keys`.
 

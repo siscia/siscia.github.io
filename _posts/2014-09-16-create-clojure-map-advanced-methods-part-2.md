@@ -158,7 +158,7 @@ This chapter was very short and probably somehow boring, but it was necessary fo
 
 Next time we are moving on to something way more fun and useful.
 
-[Next Chapter, Read Clojure Map overview of: get, get-in, contains? and find]({% post_url 2014-09-23-read-clojure-map-values-12.md %})
+[Next Chapter, Read Clojure Map overview of: get, get-in, contains? and find]({% post_url 2014-09-23-read-clojure-map-values-12 %})
 
 As always, stay tuned and write to me if you have anything to say (Ex. Some question, a request for an article, anything...)
 
