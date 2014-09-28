@@ -129,3 +129,5 @@ Next time we are going to explore three more functions, `keys`, `vals` and `sele
 In a couple of chapters we will discuss why map entries are important.
 
 As always, if you have any questions or would like to just say `hi` you can comment here or write me an email.
+
+Here you can find the next chapter: [Read Clojure Map 2/2: keys, vals, select-keys]({% post_url 2014-09-28-read-clojure-map-values-22%})
