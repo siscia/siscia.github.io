@@ -94,6 +94,7 @@ ClassCastException java.lang.String cannot be cast to clojure.lang.IFn
 A deeper explaination about how to read maps can be found here:
 
 *    [Read Clojure Map 1/2 overview of: get, get-in, contains? and find]({% post_url 2014-09-23-read-clojure-map-values-12 %})
+*    [Read Clojure Map 2/2 overview of: keys, vals and select-keys]({% post_url 2014-09-28-read-clojure-map-values-22 %})
 
 
 ## "Modify" map
