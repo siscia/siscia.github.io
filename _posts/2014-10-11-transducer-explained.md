@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "transducer explained"
+title: "Transducer Explained"
 description: ""
 category: 
-tags: []
+tags: [clojure, transducers]
+excerpt: "A small walkthrought about clojure transducer"
 ---
 {% include JB/setup %}
 
@@ -32,7 +33,7 @@ The standard approach would look similar to this:
 
 What is happening here ?
 
-First every element in s is incremented.
+First every element in `s` is incremented.
 
 {% highlight clojure %}
 =>(inc 5)
@@ -52,7 +53,7 @@ Then the element incremented are passed through a remove which remove every elem
 ;;(2 4)
 {% endhighlight %}
 
-For sake of simplicity let's call stuff like `(map inc s)` or `(remove odd? s)` with a simple name `transformation`.
+For sake of simplicity let's call stuff like `(map inc s)` or `(remove odd? s)` with a simple name: `transformation`.
 
 Also let's call `flow` a composition of transformation.
 
