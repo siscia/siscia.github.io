@@ -103,7 +103,7 @@ However if we use transducer
 
 we don't create the intermediate lazy sequences.
 
-Also I can see transducer usefully if we have a lot of different `flow` that need to be composed.
+Also I can see transducer useful if we have a lot of different `flow` that need to be composed.
 
 {% highlight clojure %}
 (def add-metadata (comp ...))
