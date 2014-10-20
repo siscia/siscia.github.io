@@ -81,6 +81,18 @@ user> (select-keys {:a 1 :b 2 :c 3} [:a :c :d])
 
 As you can see if a key is not present in the original map the returning map won't contains such key.
 
+What we need to note here is that `select-keys` takes only two arguments, the starting map and a vector of keys.
+
+You may try to pass the keys to select as a simple arguments but that will result in a pretty cryptic error.
+
+{% highlight clojure %}
+user> (select-keys {:a 1 :b 2 :c 3} :a :b) ;; ok understandable
+ArityException Wrong number of args (3) passed to: core/select-keys  clojure.lang.AFn.throwArity (AFn.java:429)
+user> (select-keys {:a 1 :b 2 :c 3} :a) ;; pretty cryptic
+IllegalArgumentException Don't know how to create ISeq from: clojure.lang.Keyword  clojure.lang.RT.seqFrom (RT.java:505)
+{% endhighlight %}
+
+
 ## end
 
 This was the last chapter about reading clojure map.
@@ -88,3 +100,6 @@ This was the last chapter about reading clojure map.
 Next time we are going to explore deeply how to modify a map adding and removing entries.
 
 As always stay tunned, and for any question don't esitate to write me.
+
+
+[Next Chapter: Map transformation in clojure 1/2 assoc, dissoc, merge]({% post_url 2014-10-20-map-transformation-in-clojure-12 %})
