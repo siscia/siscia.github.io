@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Transducer Explained"
-description: ""
-category: 
+description: "A small and easy to follow walkthrought about clojure transducer"
+category: programming
 tags: [clojure, transducers]
 excerpt: "A small walkthrought about clojure transducer"
 ---

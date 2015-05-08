@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Map transformation in clojure 1/2"
-description: ""
+description: "First chapter about how to modify maps in clojure: assoc, dissoc and merge"
 category: programming
 tags: [clojure, map, maps, clojure map, assoc, dissoc, merge]
 excerpt: "First chapter about how to modify maps in clojure: assoc, dissoc and merge" 

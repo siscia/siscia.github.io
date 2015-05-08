@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Read Clojure Map Values 2/2"
-description: ""
+description: "Other ways to read values from clojure maps using: keys, vals and select-keys"
 category: programming
 tags: [clojure, maps, map, keys, vals, select-keys, read map]
 excerpt: "Second chapter about how to read values from a clojure map: keys, vals and select-keys ."
