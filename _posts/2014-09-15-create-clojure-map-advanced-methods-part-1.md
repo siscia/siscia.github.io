@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Create Clojure Map, advanced methods, PART 1"
-description: ""
+description: "How create clojure's maps, using hash-map, array-map, zipmap, sorted-map and sorted-map-by."
 category: programming
 tags: [clojure, maps, create maps, array-map, hash-map, zipmap, sorted-map, sorted-map-by]
 excerpt: "Deeper overview of few function to create clojure's maps, in particular hash-map, array-map, zipmap, sorted-map and sorted-map-by."

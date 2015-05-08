@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Read clojure map values 1/2"
-description: ""
+description: "How read values from a clojure map: get, get-in, contains? and find."
 category: programming
 excerpt: "First chapter about how to read values from a clojure map: get, get-in, contains?, find ."
 tags: [clojure, map, read map, read, get, get-in, "contains?", find,]

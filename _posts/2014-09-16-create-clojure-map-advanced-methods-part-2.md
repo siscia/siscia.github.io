@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Create Clojure Map, advanced methods, PART 2"
-description: ""
+description: "Function with return map in clojure: bean, frequencies, group-by and clojure.set/index ."
 category: programming
 tags: [clojure, map, create map, bean, frequencies, group-by, index, clojure.set/index]
 excerpt: "Final chapter about functions which return map: bean, frequencies, group-by and clojure.set/index ."

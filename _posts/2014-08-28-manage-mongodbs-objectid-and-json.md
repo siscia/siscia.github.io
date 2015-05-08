@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Manage (Mongodb's) ObjectId and json"
-description: ""
+description: "How to manage the :_id key when working with clojure, mongodb and json."
 category:
 tags: [clojure, mongo, mongodb, rest, REST]
 ---
