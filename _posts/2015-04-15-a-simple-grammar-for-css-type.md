@@ -2,7 +2,7 @@
 layout: post
 title: "A simple grammar for CSS type"
 description: "ANN grammar for CSS types"
-category: programming, clojure
+category: programming
 tags: [clojure, css, instaparse, grammar]
 ---
 
