@@ -2,6 +2,7 @@
 layout: post
 title: "[ANN] css parser, a parser for css in clojure "
 description: "Release of a parser for css in clojure"
+excerpt: "Release of a parser for css in clojure"
 category: 
 tags: [clojure, parse, css, parser, instaparse]
 ---
