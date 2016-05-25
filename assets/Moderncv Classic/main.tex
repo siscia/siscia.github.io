@@ -1,0 +1,153 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+
+\AfterPreamble{\hypersetup{
+ pdfborder = {0 0 0.5 [3 3]}
+}}
+
+% moderncv themes
+\moderncvstyle{classic}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+\usepackage{enumitem}
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Simone}{Mosciatti}
+\title{Curriculum}                               % optional, remove / comment the line if not wanted
+\address{}{}{Italy}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+%\phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted
+%\phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{simone@mweb.biz}                               % optional, remove / comment the line if not wanted
+\homepage{siscia.github.io}                         % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{simone1}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+\newcommand{\IdentToRight}[1] {
+\addtolength{\leftskip}{26mm}
+#1
+
+}
+
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2013--Present}{Computer Engineering}{Politecnico di Milano}{Milan}{Italy}{}  % arguments 3 to 6 can be left empty
+\cventry{2014--2015}{Computer Engineering}{Tongji University}{Shanghai}{\textit{}}{Double Degree Program Politong}
+
+\section{Research Projects}
+\cventry{2016}{Estimating time to completion for MapReduce jobs: the MARC approach}
+	{Politecnico di Milano}
+	{NECST Lab}{}{\textbf{Abstract: } Nowadays, the size of data that need to be analyzed is enormous and it is growing faster than ever; moreover, results of complex computations are expected in an increasing timely manner, in order to achieve business goals. Distributed systems have been developed to handle huge data processing, but they are complex, expensive, shared between different users and even different organizations. Furthermore, the increasing heterogeneity of computations that can run on these systems even more exacerbates the problem of finding an efficient allocation of the available resources, as it is hard to estimate the job completion time under different cluster and application configurations.In this work, we leverage MARC, a framework for the estimation of resource consumption, as a mean to provide accurate models for the completion time of MapReduce jobs, executed on a Hadoop cluster.We take into consideration the percentage of job completion as a resource that can be consumed; a piece-wise linear model is then generated subdividing the job execution into different phases, according to configuration parameters and runtime metrics. The proposed model allows the user to have both a better estimate of the time required by an already submitted job to complete and the ability to perform more accurate resource reservations, towards a more efficient scheduling and a higher cluster utilization.}
+	
+\section{Experience}
+
+\cventry{2013--2014}{Software Engineer, Freelance}{workinvoice.it}{Milan}{}{
+The platform is a marketplace to buy and sell invoices.\newline
+Starting from a rough prototype I re-wrote the whole backend code in such a way to be maintainable and scalable, I also added interactivity via JS.  \newline
+As requested by my costumer the backend is written in Clojure while the frontend uses a more standard HTML5/CSS/JS combination.
+\begin{itemize}
+	\item Build authentication system for different kinds of users.
+	\item Design and implementation of the API
+	\item SQL schema design
+	\item Frontend work
+\end{itemize}}
+
+\cventry{2012--Present}{OpenSource Author}{}{}{}{I am the author of the following projects: 
+\begin{itemize}
+	\item \href{https://github.com/siscia/effe}{github.com/siscia/\textbf{\large{effe}}} Open Source Software to provide the same advantages of AWS Lambda. \href{http://redbeardlab.github.io/2016/03/05/effe.html}{Introducing Effe}
+	\item \href{https://github.com/siscia/effe-tool}{github.com/siscia/\textbf{\large{effe-tool}}} Makes it easy and simple to work with effe
+	\item \href{https://github.com/siscia/intro-to-distributed-system/blob/master/intro_to_distributed.pdf}{\textbf{Introduction to Highly Scalable, Fault Tolerant, Distributed System}} Tiny introduction to the ideas behind Highly Scalable, Fault Tolerant, Distributed system. 
+	\item \href{https://github.com/siscia/numerino}{github.com/siscia/\textbf{\large{numerino}}} Priority Queue is Elixir/Erlang/OTP
+	\item \href{https://github.com/siscia/postgres-type}{github.com/siscia/\textbf{\large{postgres-type}}} Makes possible the use the JSON datatype in Postgres database with clojure.
+\end{itemize}}
+
+\cventry{2012--Present}{OpenSource Contribution}{}{}{}{Contribution to the following libraries
+\begin{itemize}%
+\item \href{https://github.com/clj-time/clj-time}{github.com/clj-time/\textbf{\large{clj-time}}} the standard way to handle time in clojure
+\item \href{https://github.com/budu/lobos}{github.com/budu/\textbf{\large{lobos}}} SQL schema manipulation and migration library for clojure
+  \begin{itemize}%
+  \item I made possible to use lobos with the last version of the java driver.
+  \end{itemize}
+\end{itemize}}
+
+
+\section{Languages}
+\cvitemwithcomment{Italian}{Mother tongue}{}
+\cvitemwithcomment{English}{Proficient}{I was an AFS exchange student in 2011-2012 at Carthage, MO, USA high school, I followed classes in English, I read and write in English}
+\cvitemwithcomment{Chinese}{Basic}{}
+
+\section{Programming Skills}
+\cventry{Proficient}{Clojure}{compojure, monger, korma, core.async}{}{}{}
+\cventry{Proficient}{Python}{Flask, Django}{}{}{}
+\cventry{Proficient}{Elixir}{Erlang/OTP, BEAM VM}{}{}{}
+\cventry{Very Good}{SQL}{PostgreSQL, SQLite3}{}{}{}
+\cventry{Very Good}{NoSQL}{MongoDB}{}{}{}
+\cventry{Very Good}{Java}{}{}{}{}
+\cventry{Very Good}{Go(lang)}{}{}{}{}
+\cventry{Good}{C/C++}{}{}{}{}
+\cventry{Good}{JavaScript}{mongoose, node.js}{}{}{}
+\cventry{Basic}{Haskel}{}{}{}{}
+\cventry{Basic}{Rust}{}{}{}{}
+
+
+% Publications from a BibTeX file without multibib
+%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+\clearpage
+
+
+%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+%% end of file `template.tex'.
