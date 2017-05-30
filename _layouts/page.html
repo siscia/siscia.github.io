@@ -1,5 +1,16 @@
 ---
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/the-program/page.html %}
+<article>
+
+	<h1 class="title">{{ page.title }}</h1>
+
+	<div class="divider"></div>
+
+	{{ content }}
+
+</article>
+
+<div class="page-navigation">
+	<a class="home" href="{{site.baseurl}}/" title="Back to Homepage">Home</a>
+</div>

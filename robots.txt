@@ -1,1 +1,9 @@
 Sitemap: http://siscia.github.io/sitemap.xml
+---
+layout: null
+---
+
+sitemap: {{ site.baseurl | replace: 'https', 'http' | append: '/sitemap.xml' }}
+
+user-agent: EmailCollector
+disallow: /

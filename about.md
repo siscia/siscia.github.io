@@ -1,8 +1,8 @@
 ---
 layout: page
-title: About me
-tagline: 
+title: About
 ---
+
 I am a tech freelancer.
 
 I work in the intersection between business and technology.
@@ -15,7 +15,3 @@ Right now I am working mainly on IoT and distributed, fault tolerant systems.
 
 You can contact me at: simone [at] mweb [dot] biz
 
-{% for post in site.posts %}
-   [{{post.title}}]({{post.url}})
-   {{ post.excerpt }}
-{% endfor %}
