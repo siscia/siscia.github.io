@@ -38,7 +38,7 @@ One thing may, however, be interesting: how I manage to "translate" the titles.
 
 In asciidoc titles have this syntax:
 
-{% highlight text %}
+{% highlight markdown %}
 = H1 TITLE 
 == H2 TITLE
 ==== H4 TITLE
@@ -67,7 +67,7 @@ And here it comes the sorted map that helped to sort the regex from the longer t
 
 Finally, just one last little note, on github it is possible to define block of code using a syntax like:
 
-{% highlight text %}
+{% highlight shell %}
 ``` language 
 fancy code
 ```
@@ -79,11 +79,54 @@ My little script is been thought to let me publish here on jekyll, so it generat
 
 The whole code:
 
-{% gist 5841486 %}
+```
+(ns asciidoc-to-markdown.core
+  (:use [clojure.tools.cli :only [cli]]))
+
+(def titles-regex
+  (sorted-map-by #(> (count %1) (count %2))
+                 "###### $1" #"====== +([^ \t\n\r\f\v].*?)"
+                 "##### $1" #"===== +([^ \t\n\r\f\v].*?)"
+                 "#### $1" #"==== +([^ \t\n\r\f\v].*?)"
+                 "### $1" #"=== +([^ \t\n\r\f\v].*?)"
+                 "## $1" #"== +([^ \t\n\r\f\v].*?)"
+                 "# $1" #"= +([^ \t\n\r\f\v].*?)"))
+
+(defn title [text]
+  (reduce (fn [text regex]
+            (clojure.string/replace text (get titles-regex regex) regex))
+          text
+          (keys titles-regex)))
+
+(defn source [text & jekyll]
+  (clojure.string/replace text
+                          #"\[source,(.*?)\]\n----\n(.*?\n+.*?)\n----"
+                          (if (first jekyll)
+                            "\{{% highlight $1 %\}}\n$2\n\{{% endhighlight %\}}"
+                            "``` $1\n$2\n```")))
+
+(defn inline-code [text]
+  (clojure.string/replace text
+                          #"\+(.*?)\+"
+                          "`$1`"))
+
+(defn -main [input output & args]
+  (let [[args opts banner]
+        (cli args
+             ["-h" "--help" "Show help" :default false]
+             ["-j" "--jekyll" "Make jekyll ready markdown file" :flag true :default true])]
+    (println args opts banner)
+    (println (:jekyll args))
+    (spit output (-> input
+                     slurp
+                     (source (:jekyll args))
+                     title
+                     inline-code))))
+```
 
 If you are interested you can just download everything from github and run it to convert basic asciidoc into markdown.
 
-{% highlight text %}
+{% highlight shell %}
     git clone git@github.com:siscia/asciidoc-to-markdown.git
     cd asciidoc-to-markdown
     lein run input-file.asciidoc output-file.md
